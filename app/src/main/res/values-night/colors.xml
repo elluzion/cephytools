@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#121212</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="colorAccentAlpha">#40FF9800</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorSecondary">#B5B5B5</color>
+    <color name="actionCardOutline">#17FFFFFF</color>
+</resources>

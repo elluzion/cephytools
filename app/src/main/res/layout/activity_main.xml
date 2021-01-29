@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/wrapper_horizontal_padding"
+    android:paddingVertical="@dimen/wrapper_vertical_padding"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/wrapper_vertical_padding"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/main_header_heading"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/main_header_sub"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="@color/textColorSecondary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/root_disclaimer_container"
+        android:background="@drawable/accent_card_background"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/wrapper_horizontal_padding">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/root_disclaimer"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/app_actions_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/app_action_airemap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/action_card_background">
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:src="@drawable/ic_airemap" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/ai_button_remapper_title" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ai_button_remapper_summary"
+                    android:singleLine="false"
+                    android:textColor="@color/textColorSecondary"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
