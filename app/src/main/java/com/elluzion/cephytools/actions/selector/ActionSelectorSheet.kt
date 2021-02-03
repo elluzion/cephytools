@@ -1,6 +1,7 @@
 package com.elluzion.cephytools.actions.selector
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -43,7 +44,7 @@ class ActionSelectorSheet : BottomSheetDialogFragment() {
                 val view: View =
                     inflater.inflate(R.layout.action_selector_sheet_button_singleton, null)
                 val label = view.findViewById<View>(R.id.singleton_label) as TextView
-                label.text = getHumanizedActionString(item)
+                label.text = getHumanizedActionString(item, context as Context)
                 val layoutParams =
                     LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
                 layoutParams.bottomMargin = 16
@@ -52,7 +53,7 @@ class ActionSelectorSheet : BottomSheetDialogFragment() {
                 view.setOnClickListener {
                     Utils.writeToFile(item)
                     view.setBackgroundResource(R.drawable.outlined_button_background)
-                    Toast.makeText(activity, String.format(getString(R.string.selector_toast), getHumanizedActionString(item)), Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, String.format(getString(R.string.selector_toast), getHumanizedActionString(item, context as Context)), Toast.LENGTH_LONG).show()
                     this.dismiss()
                 }
                 views.add(view)

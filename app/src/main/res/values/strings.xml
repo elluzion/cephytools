@@ -6,8 +6,6 @@
     <!-- Status Card -->
     <string name="status_card_app_version">App Version</string>
     <string name="status_card_android_version">Android Version</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
 
     <!-- Current Action Card -->
     <string name="current_action_card">Current Action</string>
@@ -30,6 +28,10 @@
     <string name="selector_sheet_title">Select Action</string>
     <string name="selector_toast">Set new action %s, reboot to apply changes!</string>
 
-    <!-- Snackbar -->
+    <!-- Etc -->
     <string name="root_snackbar">Make sure root access is granted!</string>
+    <string name="unsupported_action">Unsupported Action</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+
 </resources>

@@ -45,12 +45,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateStatusInfoCardContents() {
         summary_app_version.text = BuildConfig.VERSION_NAME
-        summary_android_version.text = Build.VERSION.RELEASE_OR_CODENAME
+        summary_android_version.text = Build.VERSION.RELEASE
     }
 
     private fun updateActionTypeCard() {
-        current_action_label.text = getHumanizedActionString(getCurrentAction())
-        if (getCurrentAction() != "NOF")
+        current_action_label.text = getHumanizedActionString(getCurrentAction(), applicationContext)
+        if (getCurrentAction() != "NOF" && getHumanizedActionString(getCurrentAction(), applicationContext) != getString(R.string.unsupported_action))
             current_action_label.setTextColor(resources.getColor(R.color.green_enabled))
         else
             current_action_label.setTextColor(resources.getColor(R.color.red_disabled))

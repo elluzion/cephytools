@@ -2,6 +2,7 @@ package com.elluzion.cephytools.etc
 
 import android.content.Context
 import android.widget.Toast
+import com.elluzion.cephytools.R
 import java.io.*
 
 import com.elluzion.cephytools.etc.Constants.KEYLAYOUT_FILE_PATH
@@ -32,13 +33,17 @@ object Utils {
         return sb.toString()
     }
 
-    fun getHumanizedActionString(actionName: String?): String {
-        fun findIndex(arr: Array<String>, item: String?): Int {
+    fun getHumanizedActionString(actionName: String, context: Context): String? {
+        fun findIndex(arr: Array<String>, item: String): Int {
             return arr.indexOf(item)
         }
 
         val arr = ActionArrays.nativeFunctionArray
-        return ActionArrays.nativeFunctionArrayHumanized[findIndex(arr, actionName)]
+        return try {
+            ActionArrays.nativeFunctionArrayHumanized[findIndex(arr, actionName)]
+        } catch (ex: ArrayIndexOutOfBoundsException) {
+            context.getString(R.string.unsupported_action)
+        }
     }
 
     fun getCurrentAction(): String {
