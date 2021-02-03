@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_content_wrapper_padding">16dp</dimen>
+    <dimen name="main_activity_header_heading_size">36sp</dimen>
+    <dimen name="text_11sp">11sp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+    <dimen name="main_activity_header_subheading_bottom_padding">36dp</dimen>
+    <dimen name="main_card_vertical_margin">8dp</dimen>
+
+    <dimen name="switch_track_height">10dp</dimen>
+</resources>

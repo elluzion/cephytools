@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/prefcard_feedback_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/action_card_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/main_content_wrapper_padding"
+        android:orientation="horizontal">
+        <TextView
+            android:fontFamily="@font/poppins"
+            android:textFontWeight="700"
+            android:text="@string/feedback_card"
+            android:textSize="@dimen/text_14sp"
+            android:layout_width="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@color/primaryText"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0px"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/feedback_summary"
+        android:layout_marginHorizontal="@dimen/main_content_wrapper_padding"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/primaryText"
+        android:alpha="0.8"
+        android:textSize="@dimen/text_11sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_card_summary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/main_content_wrapper_padding"
+        android:layout_marginBottom="@dimen/main_content_wrapper_padding">
+        <Button
+            style="@style/OutlinedBigButtonStyle"
+            android:id="@+id/feedback_telegram_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/telegram"
+            android:textColor="@color/telegram_accent" />
+        <Button
+            style="@style/OutlinedBigButtonStyle"
+            android:id="@+id/feedback_bmac_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmac"
+            android:textColor="@color/bmac_accent" />
+        <Button
+            style="@style/OutlinedBigButtonStyle"
+            android:id="@+id/feedback_source_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/source"
+            android:textColor="@color/source_accent"/>
+    </LinearLayout>
+
+</LinearLayout>

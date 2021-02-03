@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/action_card_background"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:padding="@dimen/main_content_wrapper_padding">
+    <TextView
+        android:id="@+id/singleton_label"
+        android:fontFamily="@font/poppins"
+        android:textFontWeight="700"
+        android:text=""
+        android:textSize="@dimen/text_14sp"
+        android:layout_width="wrap_content"
+        android:textColor="@color/primaryText"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0px"
+        android:layout_weight="1" />
+</RelativeLayout>

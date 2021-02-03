@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bottom_sheet_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/preferenceBottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="?attr/bottomSheetStyle"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="24dp"
+        android:orientation="vertical">
+        <View
+            android:layout_width="64dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bottom_sheet_handle"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="12dp" />
+        <TextView
+            style="@style/SelectorSheetTitleTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selector_sheet_title" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/selector_sheet_buttons_parent_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

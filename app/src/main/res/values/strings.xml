@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">CephyTools</string>
+    <string name="main_activity_header_sub">by @elluzion</string>
+
+    <!-- Status Card -->
+    <string name="status_card_app_version">App Version</string>
+    <string name="status_card_android_version">Android Version</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+
+    <!-- Current Action Card -->
+    <string name="current_action_card">Current Action</string>
+
+    <!-- Set Action Card -->
+    <string name="action_enable_card">Set Action on keypress</string>
+
+    <!-- Disable Card -->
+    <string name="disable_card">Disable Button</string>
+    <string name="disable_toast">Button disabled, reboot to apply changes!</string>
+
+    <!-- Feedback Card -->
+    <string name="feedback_card">What do you think?</string>
+    <string name="feedback_card_summary">Any feedback is greatly appreciated! Just contact me on Telegram through the button below so we can talk about it :D\n\nIf you want to support my work, you can also do that through buymeacoffee.com, supporting several payment options.</string>
+    <string name="telegram" translatable="false">Telegram</string>
+    <string name="bmac">Donations</string>
+    <string name="source">Source</string>
+
+    <!-- Action Selector Sheet -->
+    <string name="selector_sheet_title">Select Action</string>
+    <string name="selector_toast">Set new action %s, reboot to apply changes!</string>
+</resources>

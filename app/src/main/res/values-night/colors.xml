@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0E0E10</color>
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="colorAccent">#5A88FF</color>
+    <color name="primaryText">#FFFFFF</color>
+    <color name="green_enabled">#53FA50</color>
+    <color name="actionCardOutline">#17FFFFFF</color>
+    <color name="telegram_accent">#2C99FF</color>
+    <color name="bmac_accent">#FFE600</color>
+</resources>

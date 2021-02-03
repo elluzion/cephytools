@@ -1,0 +1,28 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="background">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+    </style>
+    <style name="SelectorSheetTitleTheme">
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/poppins</item>
+        <item name="fontWeight">700</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+    <style name="OutlinedBigButtonStyle">
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:background">@drawable/outlined_button_background</item>
+        <item name="android:paddingHorizontal">12dp</item>
+    </style>
+</resources>
