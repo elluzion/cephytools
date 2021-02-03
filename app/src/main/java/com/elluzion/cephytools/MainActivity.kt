@@ -9,10 +9,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.elluzion.cephytools.actions.selector.ActionSelectorSheet
 import com.elluzion.cephytools.etc.Constants
+import com.elluzion.cephytools.etc.SharedPrefController
 import com.elluzion.cephytools.etc.Utils.checkRootAccess
 import com.elluzion.cephytools.etc.Utils.getCurrentAction
 import com.elluzion.cephytools.etc.Utils.getHumanizedActionString
 import com.elluzion.cephytools.etc.Utils.writeToFile
+import com.google.android.material.snackbar.Snackbar
 import jp.wasabeef.blurry.Blurry
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.prefcard_current_action.*
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         updateButtonDisableCard()
         updateFeedbackCard()
         checkRootAccess(applicationContext)
+        showRootSnackbar()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -87,5 +90,13 @@ class MainActivity : AppCompatActivity() {
             prefSheet.show(supportFragmentManager, ActionSelectorSheet.TAG)
             Blurry.with(applicationContext).radius(25).sampling(1).animate(100).onto(window.decorView.rootView as ViewGroup)
         }
+    }
+
+    private fun showRootSnackbar() {
+        if (!SharedPrefController.getSharedPrefBool(applicationContext, "hasShowedRootSnackbar", false))
+            Snackbar.make(rootLayout, R.string.root_snackbar, Snackbar.LENGTH_LONG)
+                .setBackgroundTint(getColor(R.color.colorPrimary))
+                .show()
+        SharedPrefController.setSharedPrefBool(applicationContext, "hasShowedRootSnackbar", true)
     }
 }

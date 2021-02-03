@@ -29,4 +29,7 @@
     <!-- Action Selector Sheet -->
     <string name="selector_sheet_title">Select Action</string>
     <string name="selector_toast">Set new action %s, reboot to apply changes!</string>
+
+    <!-- Snackbar -->
+    <string name="root_snackbar">Make sure root access is granted!</string>
 </resources>
