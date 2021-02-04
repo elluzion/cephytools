@@ -55,20 +55,8 @@ object Utils {
         try {
             p = Runtime.getRuntime().exec("su")
             val os = DataOutputStream(p.outputStream)
-            os.writeBytes("echo \"Do I have root?\" >/system/sd/temporary.txt\n")
-
             os.writeBytes("exit\n")
             os.flush()
-            try {
-                p.waitFor()
-                if (p.exitValue() != 255) {
-                    // Success
-                } else {
-                    Toast.makeText(context, "Error: This app needs root privileges to run!", Toast.LENGTH_SHORT).show()
-                }
-            } catch (e: InterruptedException) {
-                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
-            }
         } catch (e: IOException) {
             Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
         }
@@ -76,19 +64,19 @@ object Utils {
 
     @Throws(IOException::class)
     fun writeToFile(newAction: String) {
-        val same = getTrimmedStringFromFile(KEYLAYOUT_FILE_PATH, 0)
+        val contentWeKeep = getTrimmedStringFromFile(KEYLAYOUT_FILE_PATH, 0)
         val p = Runtime.getRuntime().exec("su")
         val os = DataOutputStream(p.outputStream)
         // Remount / as read-write
         os.writeBytes("mount -o remount,rw /\n")
-        // Change
+        // Change the action
         os.writeBytes("cp -n $KEYLAYOUT_FILE_PATH $KEYLAYOUT_FILE_PATH.bak\n")
-        os.writeBytes("echo '$same\nkey 689   $newAction' > $KEYLAYOUT_FILE_PATH\n")
+        os.writeBytes("echo '$contentWeKeep\nkey 689   $newAction' > $KEYLAYOUT_FILE_PATH\n")
         os.writeBytes("sed -i '/^\$/d' $KEYLAYOUT_FILE_PATH\n")
         // Remount / as read-only
-        os.writeBytes("mount -o remount,ro /\n");
-        os.writeBytes("exit\n");
-        os.close();
+        os.writeBytes("mount -o remount,ro /\n")
+        os.writeBytes("exit\n")
+        os.close()
         p.waitFor()
     }
 }
