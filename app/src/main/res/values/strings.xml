@@ -26,6 +26,7 @@
 
     <!-- Action Selector Sheet -->
     <string name="selector_sheet_title">Select Action</string>
+    <string name="selector_sheet_info">Notice: Not all keycodes might work, depending on your Android version and configuration!</string>
     <string name="selector_toast">Set new action %s, reboot to apply changes!</string>
 
     <!-- Etc -->
