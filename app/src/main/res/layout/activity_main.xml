@@ -22,21 +22,28 @@
         android:layout_marginBottom="@dimen/main_card_vertical_margin"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
-    <include
-        layout="@layout/prefcard_selector"
-        android:id="@+id/prefcard_selector_layout"
-        android:layout_marginBottom="@dimen/main_card_vertical_margin"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-    <include
-        layout="@layout/prefcard_disable"
-        android:id="@+id/prefcard_disable_layout"
-        android:layout_marginBottom="@dimen/main_card_vertical_margin"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-    <include
-        layout="@layout/prefcard_feedback"
-        android:id="@+id/prefcard_service_layout"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
+    <LinearLayout
+        android:id="@+id/main_activity_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/prefcard_selector"
+            android:id="@+id/prefcard_selector_layout"
+            android:layout_marginBottom="@dimen/main_card_vertical_margin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <include
+            layout="@layout/prefcard_disable"
+            android:id="@+id/prefcard_disable_layout"
+            android:layout_marginBottom="@dimen/main_card_vertical_margin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <include
+            layout="@layout/prefcard_feedback"
+            android:id="@+id/prefcard_service_layout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+    </LinearLayout>
 </LinearLayout>

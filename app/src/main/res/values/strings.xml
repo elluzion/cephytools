@@ -33,5 +33,7 @@
     <string name="unsupported_action">Unsupported Action</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
+    <string name="root_missing">Root missing! This application will not work without root.</string>
+    <string name="sad_face">:(</string>
 
 </resources>

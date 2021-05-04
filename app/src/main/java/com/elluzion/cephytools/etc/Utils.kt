@@ -1,5 +1,6 @@
 package com.elluzion.cephytools.etc
 
+import android.app.AlertDialog
 import android.content.Context
 import android.widget.Toast
 import com.elluzion.cephytools.R
@@ -50,16 +51,18 @@ object Utils {
          return getTrimmedStringFromFile(KEYLAYOUT_FILE_PATH, 1).replace("\\s".toRegex(), "")
     }
 
-    fun checkRootAccess(context: Context) {
+    fun checkRootAccess(): Boolean {
         val p: Process
         try {
             p = Runtime.getRuntime().exec("su")
             val os = DataOutputStream(p.outputStream)
             os.writeBytes("exit\n")
             os.flush()
+            return true
         } catch (e: IOException) {
-            Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+            return false
         }
+        return false
     }
 
     @Throws(IOException::class)

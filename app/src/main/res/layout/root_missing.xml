@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/sad_face"
+            android:textSize="46sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/primaryText"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/root_missing"
+            android:textSize="16sp"
+            android:alpha="0.6"
+            android:padding="24dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/primaryText"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+</FrameLayout>
