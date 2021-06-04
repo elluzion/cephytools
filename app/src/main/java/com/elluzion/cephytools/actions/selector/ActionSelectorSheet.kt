@@ -21,12 +21,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ActionSelectorSheet : BottomSheetDialogFragment() {
 
+    var NO_FUNCTION_ITEM = "NOF"
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ):
-            View? = inflater.inflate(R.layout.action_selector_sheet, container, false)
+    ): View? = inflater.inflate(R.layout.action_selector_sheet, container, false)
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -43,16 +44,15 @@ class ActionSelectorSheet : BottomSheetDialogFragment() {
         val inflater = LayoutInflater.from(context)
 
         for (item in ActionArrays.nativeFunctionArray) {
-            if (item != "NOF") {
+            if (item != NO_FUNCTION_ITEM) {
                 val view: View = inflater.inflate(
                     R.layout.action_selector_sheet_button_singleton,
-                    null
-                )
+                    null)
+
                 val label = view.findViewById<View>(R.id.singleton_label) as TextView
                 val layoutParams = LayoutParams(
                     LayoutParams.MATCH_PARENT,
-                    LayoutParams.WRAP_CONTENT
-                )
+                    LayoutParams.WRAP_CONTENT)
 
                 label.text = getHumanizedActionString(item, context as Context)
                 layoutParams.bottomMargin = 16
@@ -63,12 +63,10 @@ class ActionSelectorSheet : BottomSheetDialogFragment() {
                     view.setBackgroundResource(R.drawable.outlined_button_background)
                     Toast.makeText(
                         activity, String.format(
-                            getString(R.string.selector_toast), getHumanizedActionString(
-                                item,
-                                context as Context
-                            )
-                        ), Toast.LENGTH_LONG
-                    ).show()
+                            getString(R.string.selector_toast),
+                            getHumanizedActionString(item, context as Context)),
+                        Toast.LENGTH_LONG)
+                        .show()
                     this.dismiss()
                 }
                 views.add(view)
