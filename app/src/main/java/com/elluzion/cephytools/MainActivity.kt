@@ -21,17 +21,22 @@ import kotlinx.android.synthetic.main.prefcard_status.*
 
 class MainActivity : AppCompatActivity() {
 
+    val acs = ActionSelectorSheet()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
-        updateStatusInfoCardContents()
+        updateViews()
+        if (!checkRootAccess())
+            rootAccessError()
+    }
+
+    fun updateViews() {
+        updateStatusInfoCard()
         updateActionTypeCard()
         updateSelectorPrefCard()
         updateButtonDisableCard()
         updateFeedbackCard()
-        if (!checkRootAccess())
-            rootAccessError()
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -39,14 +44,14 @@ class MainActivity : AppCompatActivity() {
         updateActionTypeCard()
     }
 
-    private fun updateStatusInfoCardContents() {
+    private fun updateStatusInfoCard() {
         summary_app_version.text = BuildConfig.VERSION_NAME
         summary_android_version.text = Build.VERSION.RELEASE
     }
 
     private fun updateActionTypeCard() {
         current_action_label.text = getHumanizedActionString(getCurrentAction(), applicationContext)
-        if (getCurrentAction() != "NOF" && getHumanizedActionString(getCurrentAction(), applicationContext) != getString(R.string.unsupported_action))
+        if (getCurrentAction() != acs.NO_FUNCTION_ITEM && getHumanizedActionString(getCurrentAction(), applicationContext) != getString(R.string.unsupported_action))
             current_action_label.setTextColor(resources.getColor(R.color.green_enabled))
         else
             current_action_label.setTextColor(resources.getColor(R.color.red_disabled))
@@ -82,8 +87,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateSelectorPrefCard() {
         prefcard_selector_layout.setOnClickListener {
-            val prefSheet = ActionSelectorSheet()
-            prefSheet.show(supportFragmentManager, ActionSelectorSheet.TAG)
+            acs.show(supportFragmentManager, ActionSelectorSheet.TAG)
         }
     }
 

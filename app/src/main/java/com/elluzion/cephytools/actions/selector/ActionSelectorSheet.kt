@@ -21,7 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ActionSelectorSheet : BottomSheetDialogFragment() {
 
-    var NO_FUNCTION_ITEM = "NOF"
+    public var NO_FUNCTION_ITEM = "NOF"
 
     override fun onCreateView(
         inflater: LayoutInflater,
